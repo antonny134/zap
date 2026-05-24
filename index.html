@@ -37,10 +37,40 @@ header {
   gap: 12px;
   background: var(--dark);
 }
-header:hover{
-    border-bottom: 1px solid var(--lime);
-    transition: all 0.3s;
+header:hover {
+  border-bottom: 1px solid var(--lime);
+  transition: all 0.3s;
 }
+
+.header-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-btns {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+/* Mobile: logo acima dos botões */
+@media (max-width: 560px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .header-btns {
+    margin-left: 0;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
 .logo {
   font-size: 22px;
   font-weight: 800;
@@ -66,9 +96,7 @@ header:hover{
 .page.active { display: block; }
 
 /* ── HOME ── */
-#page-home {
-  display: none;
-}
+#page-home { display: none; }
 #page-home.active {
   display: flex;
   flex-direction: column;
@@ -188,9 +216,7 @@ header:hover{
 }
 
 /* ── CRIAR FORMULÁRIO ── */
-#page-criar {
-  display: none;
-}
+#page-criar { display: none; }
 #page-criar.active {
   display: flex;
   align-items: flex-start;
@@ -218,9 +244,7 @@ header:hover{
 
 .form-box h2 span { color: var(--lime); }
 
-.field-group {
-  margin-bottom: 20px;
-}
+.field-group { margin-bottom: 20px; }
 
 .field-group label {
   display: block;
@@ -269,7 +293,6 @@ header:hover{
 }
 
 .campo-item input { flex: 1; }
-
 .campo-item select { width: 110px; flex-shrink: 0; }
 
 .btn-icon {
@@ -307,9 +330,7 @@ header:hover{
 }
 
 /* ── RESULTADO ── */
-#page-resultado {
-  display: none;
-}
+#page-resultado { display: none; }
 #page-resultado.active {
   display: flex;
   flex-direction: column;
@@ -329,22 +350,9 @@ header:hover{
   text-align: center;
 }
 
-.resultado-box .check {
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-
-.resultado-box h2 {
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-
-.resultado-box p {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 28px;
-}
+.resultado-box .check { font-size: 48px; margin-bottom: 16px; }
+.resultado-box h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+.resultado-box p { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
 
 .link-box {
   background: var(--mid);
@@ -391,9 +399,7 @@ header:hover{
 }
 
 /* ── FORMULÁRIO PÚBLICO ── */
-#page-form {
-  display: none;
-}
+#page-form { display: none; }
 #page-form.active {
   display: flex;
   flex-direction: column;
@@ -426,9 +432,7 @@ header:hover{
   line-height: 1.5;
 }
 
-.public-field {
-  margin-bottom: 18px;
-}
+.public-field { margin-bottom: 18px; }
 
 .public-field label {
   display: block;
@@ -455,9 +459,7 @@ header:hover{
 }
 
 .public-field input:focus,
-.public-field textarea:focus {
-  border-color: var(--lime);
-}
+.public-field textarea:focus { border-color: var(--lime); }
 
 .powered {
   text-align: center;
@@ -470,9 +472,7 @@ header:hover{
 .powered a { color: var(--lime); text-decoration: none; }
 
 /* ── DASHBOARD ── */
-#page-dashboard {
-  display: none;
-}
+#page-dashboard { display: none; }
 #page-dashboard.active {
   display: block;
   padding: 40px 32px;
@@ -480,17 +480,8 @@ header:hover{
   margin: 0 auto;
 }
 
-#page-dashboard h2 {
-  font-size: 26px;
-  font-weight: 800;
-  margin-bottom: 4px;
-}
-
-#page-dashboard .sub {
-  color: var(--muted);
-  font-size: 13px;
-  margin-bottom: 32px;
-}
+#page-dashboard h2 { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+#page-dashboard .sub { color: var(--muted); font-size: 13px; margin-bottom: 32px; }
 
 .forms-grid {
   display: grid;
@@ -508,25 +499,10 @@ header:hover{
 }
 
 .form-card:hover { border-color: var(--lime); }
+.form-card .form-card-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; color: #fff; }
+.form-card .form-card-meta { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; margin-bottom: 14px; }
 
-.form-card .form-card-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 4px;
-  color: #fff;
-}
-
-.form-card .form-card-meta {
-  font-size: 12px;
-  color: var(--muted);
-  font-family: 'DM Mono', monospace;
-  margin-bottom: 14px;
-}
-
-.form-card-actions {
-  display: flex;
-  gap: 8px;
-}
+.form-card-actions { display: flex; gap: 8px; }
 
 .btn-sm {
   font-family: 'Syne', sans-serif;
@@ -540,12 +516,11 @@ header:hover{
 }
 
 .btn-sm:hover { opacity: 0.8; }
-
 .btn-sm.lime { background: var(--lime); color: var(--dark); }
 .btn-sm.ghost { background: var(--mid); color: var(--text); }
 .btn-sm.danger { background: #3a0000; color: var(--red); border: 1px solid var(--red); }
 
-/* Respostas modal */
+/* Modal */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -570,12 +545,7 @@ header:hover{
   overflow-y: auto;
 }
 
-.modal h3 {
-  font-size: 20px;
-  font-weight: 800;
-  margin-bottom: 20px;
-  color: #fff;
-}
+.modal h3 { font-size: 20px; font-weight: 800; margin-bottom: 20px; color: #fff; }
 
 .resp-item {
   background: var(--mid);
@@ -592,18 +562,8 @@ header:hover{
   margin-bottom: 10px;
 }
 
-.resp-item .resp-field {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 6px;
-  font-size: 13px;
-}
-
-.resp-item .resp-field strong {
-  color: var(--lime);
-  min-width: 100px;
-  font-weight: 700;
-}
+.resp-item .resp-field { display: flex; gap: 8px; margin-bottom: 6px; font-size: 13px; }
+.resp-item .resp-field strong { color: var(--lime); min-width: 100px; font-weight: 700; }
 
 .modal-close {
   background: var(--mid);
@@ -642,22 +602,12 @@ header:hover{
   transform: translateX(-50%) translateY(0);
 }
 
-/* Sucesso do form público */
-.sucesso-box {
-  text-align: center;
-  padding: 20px 0;
-}
-
+.sucesso-box { text-align: center; padding: 20px 0; }
 .sucesso-box .icon { font-size: 52px; margin-bottom: 16px; }
 .sucesso-box h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
 .sucesso-box p { color: var(--muted); font-size: 14px; }
 
-.empty-dash {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--muted);
-}
-
+.empty-dash { text-align: center; padding: 60px 20px; color: var(--muted); }
 .empty-dash i { font-size: 48px; margin-bottom: 16px; display: block; }
 .empty-dash p { font-size: 14px; margin-bottom: 20px; }
 </style>
@@ -665,9 +615,11 @@ header:hover{
 <body>
 
 <header>
-  <div class="logo">Zap<span>Form</span></div>
-  <span class="badge-beta">GRÁTIS</span>
-  <div style="margin-left:auto;display:flex;gap:10px;">
+  <div class="header-logo-row">
+    <div class="logo">Zap<span>Form</span></div>
+    <span class="badge-beta">GRÁTIS</span>
+  </div>
+  <div class="header-btns">
     <button class="btn-outline" style="padding:8px 16px;font-size:13px;" onclick="irPara('home')">Início</button>
     <button class="btn-outline" style="padding:8px 16px;font-size:13px;" onclick="irPara('dashboard')">Meus formulários</button>
     <button class="btn-primary" style="padding:8px 16px;font-size:13px;" onclick="irPara('criar')">+ Criar</button>
@@ -707,24 +659,19 @@ header:hover{
 <div id="page-criar" class="page">
   <div class="form-box">
     <h2>Criar <span>formulário</span></h2>
-
     <div class="field-group">
       <label>Nome do formulário</label>
       <input type="text" id="c-nome" placeholder="Ex: Lista de espera, Contato, Newsletter…">
     </div>
-
     <div class="field-group">
       <label>Descrição (opcional)</label>
       <textarea id="c-desc" placeholder="Explique brevemente o propósito do formulário"></textarea>
     </div>
-
     <div class="field-group">
       <label>URL de redirecionamento após envio</label>
       <input type="url" id="c-redirect" placeholder="https://seusite.com/obrigado">
     </div>
-
     <hr class="divider">
-
     <div class="field-group">
       <label>Campos do formulário</label>
       <div class="campos-lista" id="campos-lista"></div>
@@ -732,9 +679,7 @@ header:hover{
         <i class="bi bi-plus-circle"></i> Adicionar campo
       </button>
     </div>
-
     <hr class="divider">
-
     <button class="btn-primary" style="width:100%;padding:14px;" onclick="gerarFormulario()">
       Gerar link do formulário <i class="bi bi-arrow-right"></i>
     </button>
@@ -747,12 +692,10 @@ header:hover{
     <div class="check">🎉</div>
     <h2>Formulário criado!</h2>
     <p>Compartilhe o link abaixo. Quem acessar poderá preencher e você verá as respostas aqui.</p>
-
     <div class="link-box">
       <span class="link-text" id="link-gerado"></span>
       <button class="btn-copy" onclick="copiarLink()">Copiar</button>
     </div>
-
     <div class="resultado-actions">
       <button class="btn-primary" onclick="abrirLink()"><i class="bi bi-box-arrow-up-right"></i> Abrir formulário</button>
       <button class="btn-outline" onclick="irPara('dashboard')"><i class="bi bi-bar-chart"></i> Ver respostas</button>
@@ -763,9 +706,7 @@ header:hover{
 
 <!-- FORMULÁRIO PÚBLICO -->
 <div id="page-form" class="page">
-  <div class="public-form-box" id="public-form-container">
-    <!-- Renderizado dinamicamente -->
-  </div>
+  <div class="public-form-box" id="public-form-container"></div>
   <div class="powered">Powered by <a href="#" onclick="irPara('home')">ZapForm</a> — grátis para sempre</div>
 </div>
 
@@ -776,7 +717,7 @@ header:hover{
   <div class="forms-grid" id="forms-grid"></div>
 </div>
 
-<!-- Modal de respostas -->
+<!-- Modal -->
 <div class="modal-overlay" id="modal-respostas">
   <div class="modal">
     <h3 id="modal-titulo">Respostas</h3>
@@ -788,9 +729,6 @@ header:hover{
 <div class="toast" id="toast"></div>
 
 <script>
-// ──────────────────────────────────────────
-// STORAGE
-// ──────────────────────────────────────────
 const DB_FORMS = 'zapform_forms';
 const DB_RESPS = 'zapform_resps';
 
@@ -799,18 +737,12 @@ function saveForms(d) { localStorage.setItem(DB_FORMS, JSON.stringify(d)); }
 function getResps() { return JSON.parse(localStorage.getItem(DB_RESPS) || '{}'); }
 function saveResps(d) { localStorage.setItem(DB_RESPS, JSON.stringify(d)); }
 
-// ──────────────────────────────────────────
-// NAVEGAÇÃO
-// ──────────────────────────────────────────
 function irPara(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
   if (page === 'dashboard') renderDashboard();
 }
 
-// ──────────────────────────────────────────
-// CAMPOS DINÂMICOS
-// ──────────────────────────────────────────
 let camposCount = 0;
 
 function addCampo(nome = '', tipo = 'text') {
@@ -839,12 +771,7 @@ function removerCampo(id) {
   if (el) el.remove();
 }
 
-// ──────────────────────────────────────────
-// GERAR FORMULÁRIO
-// ──────────────────────────────────────────
-function uid() {
-  return Math.random().toString(36).slice(2, 10);
-}
+function uid() { return Math.random().toString(36).slice(2, 10); }
 
 function gerarFormulario() {
   const nome = document.getElementById('c-nome').value.trim();
@@ -871,7 +798,6 @@ function gerarFormulario() {
   forms.push(form);
   saveForms(forms);
 
-  // Gerar link com parâmetro
   const url = window.location.href.split('?')[0] + '?form=' + id;
   document.getElementById('link-gerado').textContent = url;
   window._lastLink = url;
@@ -888,9 +814,6 @@ function abrirLink() {
   window.open(document.getElementById('link-gerado').textContent, '_blank');
 }
 
-// ──────────────────────────────────────────
-// FORMULÁRIO PÚBLICO
-// ──────────────────────────────────────────
 function renderFormPublico(id) {
   const forms = getForms();
   const form = forms.find(f => f.id === id);
@@ -948,7 +871,6 @@ function enviarFormPublico(id) {
   resps[id].push({ dados, data: new Date().toISOString() });
   saveResps(resps);
 
-  // Mostrar sucesso
   const container = document.getElementById('public-form-container');
   container.innerHTML = `
     <div class="sucesso-box">
@@ -963,9 +885,6 @@ function enviarFormPublico(id) {
   }
 }
 
-// ──────────────────────────────────────────
-// DASHBOARD
-// ──────────────────────────────────────────
 function renderDashboard() {
   const forms = getForms();
   const resps = getResps();
@@ -1041,9 +960,6 @@ function fecharModal() {
   document.getElementById('modal-respostas').classList.remove('active');
 }
 
-// ──────────────────────────────────────────
-// TOAST
-// ──────────────────────────────────────────
 function toast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -1051,19 +967,14 @@ function toast(msg) {
   setTimeout(() => t.classList.remove('show'), 2500);
 }
 
-// ──────────────────────────────────────────
-// INICIALIZAÇÃO
-// ──────────────────────────────────────────
 (function init() {
   const params = new URLSearchParams(window.location.search);
   const formId = params.get('form');
 
   if (formId) {
-    // Está acessando um formulário público
     renderFormPublico(formId);
   } else {
     irPara('home');
-    // Adicionar campo padrão ao criar
     addCampo('Nome', 'text');
     addCampo('Email', 'email');
   }
